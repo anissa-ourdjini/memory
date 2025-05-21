@@ -5,6 +5,7 @@ import Card from './components/Card'
 
 const EMOJIS = ['🐶', '🐱', '🦊', '🐻', '🐼', '🐵']; // 6 pairs for 12 cards
 // const EMOJIS = ['../assets/dog.png', '../assets/cat.png', '../assets/fox.png', '../assets/bear.png', '../assets/panda.png', '../assets/monkey.png'];
+
 function shuffle(array) {
   const arr = array.slice()
   for (let i = arr.length - 1; i > 0; i--) {
