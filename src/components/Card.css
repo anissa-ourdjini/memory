@@ -43,7 +43,9 @@
 }
 
 .card-back {
-  background: repeating-linear-gradient(135deg, #222 0 20px, #ffe066 20px 40px);
+  background-image: url('../assets/C1.jpg');
+  background-size: cover;
+  background-position: center;
   border: 3px solid #a259f7;
   color: #a259f7;
   box-shadow: 0 4px 16px rgba(162,89,247,0.25), 0 0 0 4px #ffe066;

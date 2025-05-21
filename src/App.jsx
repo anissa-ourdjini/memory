@@ -3,14 +3,14 @@ import './App.css'
 import Button from './components/Button'
 import Card from './components/Card'
 import S1 from './assets/S1.jpg'
-// import S2 from './assets/S2.jpg'
-// import S3 from './assets/S3.jpg'
-// import S4 from './assets/S4.jpg'
-// import S5 from './assets/S5.jpg'
-// import S6 from './assets/S6.jpg'
+import S2 from './assets/S2.jpg'
+import S3 from './assets/S3.jpg'
+import S4 from './assets/S4.jpg'
+import S5 from './assets/S5.jpg'
+import S6 from './assets/S6.jpg'
 
-const EMOJIS = [S1, '🐱', '🦊', '🐻', '🐼', '🐵']; // 6 pairs for 12 cards
-// const EMOJIS = ['../assets/S1.jpg', '../assets/cat.png', '../assets/fox.png', '../assets/bear.png', '../assets/panda.png', '../assets/monkey.png'];
+const EMOJIS = [S1, S2, S3, S4, S5, S6]; // 6 pairs for 12 cards
+// const EMOJIS = ['../assets/S1.jpg', '../assets/S2.jpg', '../assets/S3.jpg', '../assets/S4.jpg', '../assets/S5.jpg', '../assets/S6.jpg'];
 
 function shuffle(array) {
   const arr = array.slice()
