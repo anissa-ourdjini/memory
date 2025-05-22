@@ -1,8 +1,11 @@
 #root {
+  width: 100%;
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 1rem;
   text-align: center;
+  display: flex;
+  flex-direction: column;
 }
 
 .logo {
@@ -41,40 +44,38 @@
   color: #888;
 }
 
-html, body, #root {
-  height: 100%;
-}
 
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Baloo 2', 'Comic Sans MS', cursive, sans-serif;
-  background: linear-gradient(120deg, #ffe066 60%, #a259f7 100%);
-  min-height: 100vh;
-  height: 100%;
+  font-family: 'Creepster', cursive, sans-serif;
+  background: black url('../assets/F1.gif') no-repeat center center fixed;
+  background-size: cover;
+  color: #ff0000;
+  overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
 .memory-game-container {
-  max-width: 900px;
-  min-height: 90vh;
-  height: 90vh;
-  margin: 0 auto;
-  background: rgba(255, 255, 255, 0.85);
-  border-radius: 24px;
-  box-shadow: 0 8px 32px rgba(162,89,247,0.15);
-  padding: 32px 24px 24px 24px;
+  min-height: 100vh;
+  margin: 0;
+  background: rgba(0, 0, 0, 0.85);
+  border: 2px solid #ff0000;
+  box-shadow: 0 0 20px #ff0000;
+  padding: 3rem 2rem;
   text-align: center;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
 }
 
 .memory-game-container h1 {
-  color: #222;
-  letter-spacing: 2px;
-  margin-bottom: 24px;
-  text-shadow: 1px 2px 0 #ffe066, 2px 4px 0 #a259f7;
+  font-size: 4rem; /* Increase font size */
+  color: #ff0000;
+  margin: 1rem 0 1.5rem 0; /* Further increase top margin to push the title lower */
+  text-align: center;
+  font-weight: bold;
+  text-shadow: 0 0 15px #ff0000, 0 0 30px #ff0000;
 }
 
 .game-stats {
@@ -84,15 +85,15 @@ body {
   margin-bottom: 16px;
   font-size: 1.2rem;
   font-weight: bold;
-  color: #a259f7;
-  text-shadow: 1px 1px 0 #ffe066;
+  color: #ff0000;
+  text-shadow: 0 0 5px #ff0000;
 }
 
 .cards-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(3, 1fr);
-  gap: 18px;
+  gap: 20px;
   justify-items: center;
   align-items: center;
   width: 100%;
@@ -105,9 +106,9 @@ body {
 .victory-message {
   margin-top: 24px;
   font-size: 1.5rem;
-  color: #a259f7;
+  color: #ff0000;
   font-weight: bold;
-  text-shadow: 1px 1px 0 #ffe066, 2px 2px 0 #222;
+  text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000;
   animation: pop 0.5s;
   line-height: 1.5;
 }
@@ -119,9 +120,10 @@ body {
 }
 
 button {
-  background: linear-gradient(90deg, #ffe066 70%, #a259f7 100%);
-  color: #222;
-  border: 2px solid #a259f7;
+  background: linear-gradient(90deg, #ff0000 70%, #8b0000 100%);
+  color: white;
+  border: 2px solid #8b0000;
+  box-shadow: 0 0 10px #ff0000;
   border-radius: 12px;
   padding: 10px 28px;
   font-size: 1.1rem;
@@ -129,17 +131,51 @@ button {
   font-weight: bold;
   cursor: pointer;
   margin-bottom: 12px;
-  box-shadow: 0 2px 8px rgba(162,89,247,0.10);
   transition: all 0.2s ease;
 }
 
 button:hover {
-  background: #a259f7;
-  color: #ffe066;
-  box-shadow: 0 4px 16px rgba(162,89,247,0.25);
-  transform: translateY(-2px);
+  background: #8b0000;
+  color: #ff0000;
+  box-shadow: 0 0 20px #ff0000;
 }
 
 button:active {
   transform: translateY(0);
+}
+
+/* Ajout d'effets de sang plus immersifs */
+
+@keyframes fall {
+  0% {
+    transform: translateY(-10%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(110%);
+    opacity: 0;
+  }
+}
+
+.blood-drip {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 60px;
+  z-index: 10000;
+  pointer-events: none;
+  background: url('../assets/F1.gif') repeat-x;
+  opacity: 0.7;
+  filter: blur(0.5px) brightness(1.2);
+}
+
+.blood-particle {
+  position: fixed;
+  border-radius: 50%;
+  background: radial-gradient(circle at 60% 40%, #ff0000 80%, #8b0000 100%);
+  opacity: 0.85;
+  z-index: 9999;
+  pointer-events: none;
+  animation: fall 5s linear;
 }
