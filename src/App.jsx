@@ -133,25 +133,6 @@ function App() {
     setMoves(0);
     setDeck(createShuffledDeck());
   }
-
-  useEffect(() => {
-    const bloodEffect = document.createElement('div');
-    bloodEffect.style.position = 'fixed';
-    bloodEffect.style.top = '0';
-    bloodEffect.style.left = '0';
-    bloodEffect.style.width = '100%';
-    bloodEffect.style.height = '100%';
-    bloodEffect.style.pointerEvents = 'none';
-    bloodEffect.style.zIndex = '9999';
-    bloodEffect.style.background = "url('../assets/F1.gif') repeat";
-    bloodEffect.style.opacity = '0.2';
-    document.body.appendChild(bloodEffect);
-
-    return () => {
-      document.body.removeChild(bloodEffect);
-    };
-  }, []);
-
   useEffect(() => {
     const createBloodParticle = () => {
       const particle = document.createElement('div');
@@ -250,13 +231,4 @@ function App() {
 
 export default App
 
-/*
-@keyframes fall {
-  0% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(100vh);
-  }
-}
-*/
+
