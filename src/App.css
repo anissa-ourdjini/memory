@@ -179,3 +179,55 @@ button:active {
   pointer-events: none;
   animation: fall 5s linear;
 }
+
+/* Ajout de media queries pour rendre le jeu responsive */
+@media (max-width: 900px) {
+  .memory-game-container {
+    padding: 2rem 0.5rem;
+  }
+  .memory-game-container h1 {
+    font-size: 2.5rem;
+  }
+  .cards-grid {
+    gap: 12px;
+  }
+}
+
+@media (max-width: 700px) {
+  .memory-game-container {
+    padding: 1rem 0.2rem;
+  }
+  .memory-game-container h1 {
+    font-size: 2rem;
+  }
+  .game-stats {
+    flex-direction: column;
+    gap: 10px;
+    font-size: 1rem;
+  }
+  .cards-grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 10px;
+    margin: 16px 0 8px 0;
+  }
+}
+
+@media (max-width: 500px) {
+  .memory-game-container {
+    padding: 0.5rem 0.1rem;
+  }
+  .memory-game-container h1 {
+    font-size: 1.2rem;
+    margin: 0.5rem 0 1rem 0;
+  }
+  .cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    gap: 6px;
+  }
+  button {
+    font-size: 0.9rem;
+    padding: 7px 10px;
+  }
+}
