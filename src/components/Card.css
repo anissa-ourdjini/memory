@@ -25,7 +25,7 @@
   height: 100%;
   backface-visibility: hidden;
   border-radius: 16px;
-  box-shadow: 0 4px 16px rgba(80,0,80,0.15), 0 0 0 4px #a259f7;
+  box-shadow: 0 4px 16px rgba(80,0,80,0.15), 0 0 0 4px red;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -43,10 +43,12 @@
 }
 
 .card-back {
-  background: repeating-linear-gradient(135deg, #222 0 20px, #ffe066 20px 40px);
-  border: 3px solid #a259f7;
-  color: #a259f7;
-  box-shadow: 0 4px 16px rgba(162,89,247,0.25), 0 0 0 4px #ffe066;
+  background-image: url('../assets/C1.jpg');
+  background-size: cover;
+  background-position: center;
+  border: 3px solid red;
+  color: red;
+  box-shadow: 0 4px 16px rgba(162,89,247,0.25), 0 0 0 4px red;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -55,5 +57,5 @@
 }
 
 .card:hover .card-front, .card:hover .card-back {
-  box-shadow: 0 8px 24px rgba(162,89,247,0.35), 0 0 0 6px #a259f7;
+  box-shadow: 0 8px 24px rgba(162,89,247,0.35), 0 0 0 6px red;
 } 
