@@ -133,30 +133,6 @@ function App() {
     setMoves(0);
     setDeck(createShuffledDeck());
   }
-  useEffect(() => {
-    const createBloodParticle = () => {
-      const particle = document.createElement('div');
-      particle.style.position = 'fixed';
-      particle.style.top = '-10%';
-      particle.style.left = `${Math.random() * 100}vw`;
-      particle.style.width = `${Math.random() * 5 + 2}px`;
-      particle.style.height = `${Math.random() * 20 + 10}px`;
-      particle.style.backgroundColor = 'red';
-      particle.style.opacity = '0.8';
-      particle.style.zIndex = '9999';
-      particle.style.borderRadius = '50%';
-      particle.style.animation = 'fall 5s linear';
-      document.body.appendChild(particle);
-
-      setTimeout(() => {
-        document.body.removeChild(particle);
-      }, 5000);
-    };
-
-    const interval = setInterval(createBloodParticle, 100);
-
-    return () => clearInterval(interval);
-  }, []);
 
   useEffect(() => {
     if (audioRef.current) {
@@ -181,7 +157,7 @@ function App() {
   return (
     <div className="memory-game-container">
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '1.5rem', marginTop: '2rem', marginBottom: '1.5rem', position: 'absolute', top: 0, left: 0, width: '100%' }}>
-        <h1 style={{ margin: 0 }}>Cauchemars cachés </h1>
+        <h1 style={{ margin: 0 }}>Hidden Nightmares</h1>
         <img src={C2} alt="C2" style={{ height: '4rem', borderRadius: '10px', boxShadow: '0 0 10px #ff0000' }} />
       </div>
       <div style={{ height: '7rem' }}></div>
@@ -192,7 +168,7 @@ function App() {
       </div>
       <Button onClick={handleReset}>New Game</Button>
       <Button onClick={handle15sMode} style={{marginLeft: '1rem', background: is15sMode ? '#ff0000' : undefined}}>
-        {is15sMode ? 'Désactiver le mode 15s' : 'Mode 15 secondes'}
+        {is15sMode ? 'Disable 15s Mode' : '15 Seconds Mode'}
       </Button>
       <div className="cards-grid">
         {deck.map(card => (
@@ -217,8 +193,8 @@ function App() {
       )}
       {timeUp && is15sMode && !gameWon && (
         <div className="victory-message" style={{background: '#ff0000cc', color: 'white'}}>
-          ⏰ Temps écoulé !<br />
-          Essayez encore en moins de 15 secondes !
+          ⏰ Time's up!<br />
+          Try again in under 15 seconds!
         </div>
       )}
       <button onClick={handleAudioButton} style={{position: 'absolute', top: 20, right: 20, zIndex: 10000}}>
